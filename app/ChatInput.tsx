@@ -27,7 +27,7 @@ function ChatInput() {
             message: messageToSend,
             created_at: Date.now(),
             username: 'Arash Hosseini',
-            profilePic:'https://yt3.ggpht.com/yti/AHXOFjWcc7SMLf3HowFwODeHebvZLoF3H9jLTH8UXd4b-Q=s88-c-k-c0x00ffffff-no-rj-mo',
+            profilePic:'https://lh3.googleusercontent.com/a/AEdFTp4vu1jsRscd02FJWZBFwHMqzyi3PxuAOWZ2abUJKg=s317-p-rw-no',
             email:'work.arashhosseini@gmail.com'
         }
 
@@ -54,7 +54,7 @@ function ChatInput() {
 
   return (
     <form onSubmit={addMessage}
-    className='flex px-10 py-5 space-x-2 border-t border-gray-100 fixed z-50 bottom-0 w-full'>
+    className='flex px-10 py-5 space-x-2 border-t border-gray-100 fixed z-50 bottom-0 w-full bg-white'>
     <input
     value={input}
     onChange={(e)=>setInput(e.target.value)}

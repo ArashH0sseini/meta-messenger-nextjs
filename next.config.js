@@ -5,6 +5,6 @@ module.exports = {
     appDir: true
   },
   images:{
-    domains:['1000logos.net']
+    domains:['1000logos.net','lh3.googleusercontent.com']
   }
 }
