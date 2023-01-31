@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react"
 import {v4 as uuid} from 'uuid'
+import { Message } from "../typings"
 
 function ChatInput() {
     const [input,setInput] = useState("")
@@ -15,6 +16,33 @@ function ChatInput() {
         setInput('')
 
         const id = uuid()
+
+        const message: Message = {
+            id,
+            message: messageToSend,
+            created_at: Date.now(),
+            username: 'Arash Hosseini',
+            profilePic:'https://yt3.ggpht.com/yti/AHXOFjWcc7SMLf3HowFwODeHebvZLoF3H9jLTH8UXd4b-Q=s88-c-k-c0x00ffffff-no-rj-mo',
+            email:'work.arashhosseini@gmail.com'
+        }
+
+
+        const uploadMessageToUpstash = async () => {
+            const res = await fetch('/api/addMessage',{
+                method:"POST",
+                headers:{
+                    "Content-Type": "application/json",
+                },
+                body:JSON.stringify({
+                    message,
+                }),
+            });
+
+            const data = await res.json()
+            console.log('message added',data)
+        };
+
+        uploadMessageToUpstash()
     }
 
   return (
